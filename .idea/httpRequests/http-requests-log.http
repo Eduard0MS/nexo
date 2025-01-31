@@ -1,0 +1,21 @@
+GET http://localhost:8000/admin/
+User-Agent: IntelliJ HTTP Client/PyCharm 2024.3.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: csrftoken=I3QqcwqMEfnqAivY2VZrQ1zqgO7UEupl
+cookie: csrftoken=I3QqcwqMEfnqAivY2VZrQ1zqgO7UEupl
+
+<> 2025-01-31T114002.200.html
+
+###
+
+GET http://localhost:8000/admin/
+User-Agent: IntelliJ HTTP Client/PyCharm 2024.3.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+cookie:
+
+<> 2025-01-31T113949.200.html
+
+###
+
