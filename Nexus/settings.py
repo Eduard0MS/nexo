@@ -68,11 +68,12 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'nexosmpo',
-        'USER': 'root',
+        'USER': 'wxxorlosh',
         'PASSWORD': '1802Edu0#*#',
-        'HOST': 'localhost',
+        'HOST': 'mponexos-server.mysql.database.azure.com',
         'PORT': '3306',
         'OPTIONS': {
+            'ssl': {'ssl-mode': 'REQUIRED'},
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
             'charset': 'utf8mb4',
         },
