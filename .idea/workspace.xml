@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a732b7d-1674-472e-ba18-192cb5a9f9b0" name="Changes" comment="add python -m pip install --upgrade pip">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="3a732b7d-1674-472e-ba18-192cb5a9f9b0" name="Changes" comment="add python -m pip install --upgrade pip" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -83,7 +80,7 @@
       <workItem from="1739295175325" duration="1659000" />
       <workItem from="1739548453577" duration="52000" />
       <workItem from="1739555410640" duration="1179000" />
-      <workItem from="1739557293255" duration="320000" />
+      <workItem from="1739557293255" duration="809000" />
     </task>
     <task id="LOCAL-00001" summary="Primeiro Commit">
       <option name="closed" value="true" />
@@ -101,7 +98,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739557610393</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add python -m pip install --upgrade pip">
+      <option name="closed" value="true" />
+      <created>1739557637604</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1739557637604</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
