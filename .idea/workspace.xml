@@ -4,40 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a732b7d-1674-472e-ba18-192cb5a9f9b0" name="Changes" comment="Primeiro Commit">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/eduardo_m_silva.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/static/css/organograma.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/static/js/organograma.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/templates/admin/import_planilhas.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/templates/admin/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/templates/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/templates/core/organograma.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/templates/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/templates/pt_BR/LC_MESSAGES/django.mo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/templates/pt_BR/LC_MESSAGES/django.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/templates/registration/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/templates/registration/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Nexus.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Nexus.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1336c9d9-0115-4753-8486-ef62efb6df8e.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1336c9d9-0115-4753-8486-ef62efb6df8e/storage_v2/_src_/database/nexoup.CZZ8wQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1336c9d9-0115-4753-8486-ef62efb6df8e/storage_v2/_src_/database/nexoup.CZZ8wQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1336c9d9-0115-4753-8486-ef62efb6df8e/storage_v2/_src_/database/nexoup.CZZ8wQ/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1336c9d9-0115-4753-8486-ef62efb6df8e/storage_v2/_src_/database/nexoup.CZZ8wQ/schema/public.abK9xQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ae11476c-ebfb-43a9-9e83-e7f5850b15c2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ae11476c-ebfb-43a9-9e83-e7f5850b15c2/storage_v2/_src_/database/nexo.7oozAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ae11476c-ebfb-43a9-9e83-e7f5850b15c2/storage_v2/_src_/database/nexo.7oozAA/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ae11476c-ebfb-43a9-9e83-e7f5850b15c2/storage_v2/_src_/database/nexo.7oozAA/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ae11476c-ebfb-43a9-9e83-e7f5850b15c2/storage_v2/_src_/database/nexo.7oozAA/schema/public.abK9xQ.meta" beforeDir="false" />
+    <list default="true" id="3a732b7d-1674-472e-ba18-192cb5a9f9b0" name="Changes" comment="add python -m pip install --upgrade pip">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Nexus/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Nexus/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Nexus/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Nexus/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,8 +23,18 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {}
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Eduard0MS/nexo.git&quot;,
+    &quot;accountId&quot;: &quot;95a46a3f-25fd-462f-8e39-caaef19df013&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -80,15 +59,15 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.github.copilot.settings.ApplicationConfigurable&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-PY-243.23654.177" />
-        <option value="bundled-python-sdk-91d3a02ef49d-43b77aa2d136-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.23654.177" />
+        <option value="bundled-js-predefined-d6986cc7102b-76f8388c3a79-JavaScript-PY-243.24978.54" />
+        <option value="bundled-python-sdk-91e3b7efe1d4-466328ff949b-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.24978.54" />
       </set>
     </attachedChunks>
   </component>
@@ -103,11 +82,46 @@
       <workItem from="1738263069327" duration="10000" />
       <workItem from="1739295175325" duration="1659000" />
       <workItem from="1739548453577" duration="52000" />
+      <workItem from="1739555410640" duration="1179000" />
+      <workItem from="1739557293255" duration="320000" />
     </task>
+    <task id="LOCAL-00001" summary="Primeiro Commit">
+      <option name="closed" value="true" />
+      <created>1739555563413</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1739555563413</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add python -m pip install --upgrade pip">
+      <option name="closed" value="true" />
+      <created>1739557610393</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1739557610393</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Primeiro Commit" />
+    <MESSAGE value="add python -m pip install --upgrade pip" />
+    <option name="LAST_COMMIT_MESSAGE" value="add python -m pip install --upgrade pip" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Nexus$manage.coverage" NAME="manage Coverage Results" MODIFIED="1739189614527" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
