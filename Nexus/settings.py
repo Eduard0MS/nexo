@@ -68,8 +68,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'nexosmpo',
-        'USER': 'wxxorlosh',
-        'PASSWORD': 'vnZZKBR$yDaucLYT',
+        'USER': 'wxxorlosh@mponexos-server',
+        'PASSWORD': '1802Edu0#*#',
         'HOST': 'mponexos-server.mysql.database.azure.com',
         'PORT': '3306',
         'OPTIONS': {
