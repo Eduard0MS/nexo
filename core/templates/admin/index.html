@@ -1,0 +1,7 @@
+{% extends "admin/base_site.html" %}
+{% block content %}
+  {{ block.super }}
+  <hr>
+  <h2>Importar Planilhas</h2>
+  <p><a href="{% url 'core_unidadecargo_import_planilhas' %}">Clique aqui!</a></p>
+{% endblock %}

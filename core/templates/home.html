@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Organograma - NexusProject
+{% endblock title %}
+
+{% block content %}
+  <!-- Barra de botões para controle do organograma -->
+  <div class="buttons-bar">
+    <button id="expandAllBtn">Expandir Todos</button>
+    <button id="collapseBtn">Colapsar para 2 Níveis</button>
+  </div>
+
+  <!-- Container para o organograma com scroll -->
+  <div id="organogramaContainer"></div>
+
+  <!-- Carrega o D3.js (versão 6+) -->
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <!-- Script personalizado do organograma -->
+  <script src="{% static 'js/organograma.js' %}"></script>
+{% endblock content %}

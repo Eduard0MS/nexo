@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Nexos - {% block title %}{% endblock %}</title>
+    <!-- CSS geral e específico -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/organograma.css' %}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Nexos</h1>
+            <nav>
+                {% if user.is_authenticated %}
+                    <form action="{% url 'logout' %}" method="POST" style="display: inline;">
+                        {% csrf_token %}
+                        <button type="submit">Logout</button>
+                    </form>
+                {% else %}
+                    <a href="{% url 'login' %}">Login</a>
+                    <a href="{% url 'register' %}">Registrar</a>
+                {% endif %}
+            </nav>
+        </header>
+
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+
+        <footer>
+            <hr>
+            <p>&copy; 2025 Nexos - Todos os direitos reservados.</p>
+        </footer>
+    </div>
+</body>
+</html>

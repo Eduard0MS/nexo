@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Organograma</title>
+    <link rel="stylesheet" href="{% static 'core/css/organograma.css' %}">
+</head>
+<body>
+    <h1>Organograma</h1>
+
+    <div id="organograma-container"></div>
+
+    <!-- Carrega D3.js (exemplo da versão 7) -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <!-- Seu script para renderizar a árvore -->
+    <script>
+    (function() {
+      const width = 1200, height = 800;
+      const svg = d3.select("#organograma-container")
+                    .append("svg")
+                    .attr("width", width)
+                    .attr("height", height);
+
+      const g = svg.append("g").attr("class", "tree-group");
+
+      // Layout D3 (tree)
+      const tree = d3.tree().size([height, width - 200]);
+
+      // Zoom e Pan
+      const zoom = d3.zoom()
+        .scaleExtent([0.5, 2])
+        .on("zoom", (event) => {
+          g.attr("transform", event.transform);
+        });
+      svg.call(zoom);
+
+      // Busca dados em /organograma/data/
+      d3.json("{% url 'organograma_data' %}").then(data => {
+        // data é um array de raízes (pode ser 1 ou vários)
+        // Se for um array com mais de um item, você pode desenhar cada root em paralelo
+        // A seguir, desenhamos cada root separadamente, lado a lado ou sob demanda
+
+        let offsetY = 0; // Para "empilhar" as árvores se houver várias raízes
+        data.forEach((rootData, i) => {
+          const root = d3.hierarchy(rootData);
+          tree(root);
+
+          // Desenha links
+          g.selectAll(`.link-${i}`)
+            .data(root.links())
+            .join("line")
+            .attr("class", `link-${i}`)
+            .attr("stroke", "#999")
+            .attr("x1", d => d.source.y)
+            .attr("y1", d => d.source.x + offsetY)
+            .attr("x2", d => d.target.y)
+            .attr("y2", d => d.target.x + offsetY);
+
+          // Desenha nós
+          const nodes = g.selectAll(`.node-${i}`)
+            .data(root.descendants())
+            .join("g")
+            .attr("class", `node-${i}`)
+            .attr("transform", d => `translate(${d.y},${d.x + offsetY})`);
+
+          nodes.append("circle")
+            .attr("r", 10)
+            .attr("fill", "#4db6ac");
+
+          nodes.append("text")
+            .attr("dy", -15)
+            .attr("text-anchor", "middle")
+            .text(d => d.data.name)
+            .style("font-size", "12px");
+
+          // Aumenta offsetY para não sobrepor árvores
+          offsetY += root.height * 50 + 100;
+        });
+      });
+    })();
+    </script>
+</body>
+</html>
