@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% load static %} {% block title %}Entrar{% endblock
+%} {% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/auth.css' %}?v=1" />
+{% endblock %} {% block content %}
+<div class="auth-container fade-in">
+  <div class="auth-row">
+    <div class="auth-col-image">
+      <img
+        src="{% static 'images/login_image.jpg' %}"
+        alt="Imagem de Login"
+        class="auth-image"
+        onerror="this.src='https://via.placeholder.com/600x600?text=Nexos';this.onerror='';"
+      />
+    </div>
+    <div class="auth-col-form">
+      <h1 class="auth-title">Entrar</h1>
+      <form method="POST" novalidate>
+        {% csrf_token %}
+        <!-- Campos do formulário aqui -->
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,211 @@
+/* organograma.css */
+
+/* Estilos para o body e container do organograma */
+body {
+  margin: 0;
+  font-family: 'Inter', 'Roboto', sans-serif;
+  background-color: #f8f9fa;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Estilos específicos para a página de organograma */
+.organograma-page {
+  margin-top: -30px;
+}
+
+.main-content {
+  padding-top: 0;
+}
+
+#organogramaContainer,
+.organograma-container {
+  width: 100%;
+  height: 88vh;
+  overflow: hidden;
+  border-radius: 8px;
+  position: relative;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  margin-bottom: 5px;
+}
+
+/* Título interno do organograma */
+.org-title {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  z-index: 1001;
+  background-color: #ffffff;
+  padding: 8px 15px;
+  border-radius: 4px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  border: 1px solid #e0e0e0;
+}
+
+/* Barra de botões interna */
+.org-buttons-bar {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  z-index: 1001;
+  background-color: #ffffff;
+  padding: 8px;
+  border-radius: 4px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  border: 1px solid #e0e0e0;
+}
+
+/* Estilos para o organograma */
+.node circle {
+  fill: #f8fafd;
+  stroke: #d1d9e6;
+  stroke-width: 1.5px;
+  transition: all 0.3s ease;
+}
+
+.node:hover circle {
+  fill: #e9f0f9;
+  stroke: #4a90e2;
+  stroke-width: 2px;
+}
+
+.node text {
+  font-size: 12px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  fill: #333333;
+}
+
+.node--internal text {
+  text-shadow: 0 1px 0 #fff, 0 -1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff;
+}
+
+.link {
+  fill: none;
+  stroke: #a4c5f4;
+  stroke-width: 2px;
+  stroke-opacity: 0.7;
+}
+
+.node .label-nome {
+  font-size: 12px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  fill: #333333;
+}
+
+.node .label-cargo {
+  font-size: 10px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  fill: #666666;
+}
+
+.tooltip {
+  position: absolute;
+  padding: 12px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 1000;
+  font-size: 12px;
+  max-width: 250px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.tooltip h4 {
+  margin: 0 0 5px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #4a90e2;
+}
+
+.tooltip p {
+  margin: 0 0 8px 0;
+  color: #666;
+}
+
+.tooltip-field {
+  display: flex;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.tooltip-label {
+  font-weight: 500;
+  margin-right: 5px;
+  color: #333;
+}
+
+.tooltip-value {
+  color: #666;
+}
+
+/* Estilos para nós expandidos/colapsados */
+.node--internal.collapsed circle {
+  fill: #4a90e2;
+}
+
+.node--internal.collapsed text {
+  fill: white;
+}
+
+/* Animação para o organograma */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.node,
+.link {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Estilos para os botões de controle */
+.control-btn {
+  background-color: #f8f9fa;
+  border: 1px solid #d1d9e6;
+  color: #333;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  z-index: 1002;
+  position: relative;
+}
+
+.control-btn:hover {
+  background-color: #e9f0f9;
+  border-color: #4a90e2;
+}
+
+.control-btn i {
+  font-size: 12px;
+  color: #4a90e2;
+}

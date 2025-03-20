@@ -1,0 +1,415 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nexos - {% block title %}{% endblock %}</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome para ícones -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/organograma.css' %}" />
+    <style>
+      /* Estilos para o modo escuro */
+      body.dark-mode {
+        background-color: #000000;
+        color: #e0e0e0;
+        background-image: none;
+      }
+
+      body {
+        background-color: #ffffff;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      body.dark-mode .auth-wrapper {
+        background-color: #000000;
+        background-image: none;
+      }
+
+      body.dark-mode .navbar {
+        background-color: #000000;
+      }
+
+      body.dark-mode .navbar-brand,
+      body.dark-mode .nav-link {
+        color: #e0e0e0;
+      }
+
+      body.dark-mode .card,
+      body.dark-mode .quick-link {
+        background-color: #121212;
+        border-color: #222222;
+      }
+
+      body.dark-mode .card-header {
+        background-color: #1a1a1a;
+        border-color: #222222;
+      }
+
+      body.dark-mode .footer {
+        background-color: #000000;
+        color: #aaa;
+      }
+
+      body.dark-mode .stats-card {
+        background-color: #333;
+      }
+
+      body.dark-mode .dropdown-menu,
+      body.dark-mode .modal-content {
+        background-color: #121212;
+        border-color: #222222;
+        color: #e0e0e0;
+      }
+
+      body.dark-mode .dropdown-item:hover {
+        background-color: #1a1a1a;
+      }
+
+      body.dark-mode .btn-outline-primary {
+        color: #90b2e5;
+        border-color: #4a90e2;
+      }
+
+      body.dark-mode .btn-outline-primary:hover {
+        background-color: #4a90e2;
+        color: #fff;
+      }
+
+      body.dark-mode .form-control,
+      body.dark-mode .form-select {
+        background-color: #1a1a1a;
+        border-color: #333333;
+        color: #e0e0e0;
+      }
+
+      body.dark-mode .nav-link {
+        color: #90b2e5;
+      }
+
+      body.dark-mode .nav-link:hover {
+        color: #e0e0e0;
+      }
+
+      body.dark-mode .navbar-brand {
+        color: #ffffff;
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.7),
+          0 0 30px rgba(74, 144, 226, 0.5);
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
+
+      body.dark-mode .navbar-brand:hover {
+        text-shadow: 0 0 25px rgba(255, 255, 255, 0.9),
+          0 0 35px rgba(74, 144, 226, 0.7);
+      }
+
+      body.dark-mode .navbar-brand span[data-letter] {
+        position: relative;
+        color: #ffffff;
+        opacity: 1;
+      }
+
+      body.dark-mode .navbar-brand span[data-letter='N'] {
+        text-shadow: 0 0 15px #4a90e2;
+      }
+
+      body.dark-mode .navbar-brand span[data-letter='e'] {
+        text-shadow: 0 0 15px #4a90e2;
+      }
+
+      body.dark-mode .navbar-brand span[data-letter='x'] {
+        text-shadow: 0 0 15px #4a90e2;
+      }
+
+      body.dark-mode .navbar-brand span[data-letter='o'] {
+        text-shadow: 0 0 15px #4a90e2;
+      }
+
+      /* Melhora a legibilidade do texto no modo escuro */
+      body.dark-mode h1,
+      body.dark-mode h2,
+      body.dark-mode h3,
+      body.dark-mode h4,
+      body.dark-mode h5,
+      body.dark-mode h6 {
+        color: #ffffff;
+      }
+
+      body.dark-mode p,
+      body.dark-mode label,
+      body.dark-mode .card-text {
+        color: #e0e0e0;
+      }
+
+      /* Destaque do texto no dark mode */
+      body.dark-mode .text-primary {
+        color: #90b2e5 !important;
+      }
+
+      /* Estilos comuns */
+      .card {
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        transition: background-color 0.3s ease, border-color 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      body.dark-mode .card {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      }
+
+      .btn {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+      }
+
+      .btn:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.1);
+        transition: width 0.3s ease;
+        z-index: 0;
+      }
+
+      .btn:hover:before {
+        width: 100%;
+      }
+
+      .btn-primary:hover,
+      .btn-outline-primary:hover,
+      .btn-success:hover,
+      .btn-outline-secondary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
+      }
+
+      body.dark-mode .btn-primary:hover {
+        box-shadow: 0 5px 15px rgba(74, 144, 226, 0.6);
+      }
+
+      body.dark-mode .btn-outline-primary {
+        color: #90b2e5;
+        border-color: #4a90e2;
+      }
+
+      body.dark-mode .btn-outline-primary:hover {
+        background-color: #4a90e2;
+        color: #fff;
+        box-shadow: 0 5px 15px rgba(74, 144, 226, 0.5);
+      }
+
+      body.dark-mode .btn-outline-secondary {
+        color: #d0d0d0;
+        border-color: #555555;
+      }
+
+      body.dark-mode .btn-outline-secondary:hover {
+        background-color: #555555;
+        color: #fff;
+        box-shadow: 0 5px 15px rgba(85, 85, 85, 0.5);
+      }
+
+      /* Ícone de tema */
+      #toggleThemeBtn .fas {
+        transition: transform 0.5s ease;
+      }
+
+      body.dark-mode #toggleThemeBtn .fa-sun {
+        display: inline-block;
+      }
+
+      body.dark-mode #toggleThemeBtn .fa-moon {
+        display: none;
+      }
+
+      #toggleThemeBtn .fa-sun {
+        display: none;
+      }
+
+      #toggleThemeBtn .fa-moon {
+        display: inline-block;
+      }
+
+      /* Logo Nexo mais destacado */
+      .navbar-brand {
+        font-weight: 700;
+        transition: all 0.3s ease;
+        letter-spacing: 0.5px;
+      }
+
+      .navbar-brand:hover {
+        text-shadow: 0 0 10px rgba(74, 144, 226, 0.5);
+      }
+
+      body.dark-mode .navbar-brand {
+        color: #ffffff;
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.5),
+          0 0 30px rgba(74, 144, 226, 0.3);
+      }
+
+      body.dark-mode .navbar-brand:hover {
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.7),
+          0 0 30px rgba(74, 144, 226, 0.5);
+      }
+
+      /* Navegação melhorada */
+      .nav-link {
+        position: relative;
+        transition: all 0.3s ease;
+      }
+
+      .nav-link:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -2px;
+        left: 50%;
+        background-color: #4a90e2;
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+      }
+
+      .nav-link:hover:after {
+        width: 70%;
+      }
+
+      body.dark-mode .nav-link:after {
+        background-color: #90b2e5;
+      }
+    </style>
+    {% block extra_css %}{% endblock %}
+  </head>
+  <body>
+    <!-- Navbar Minimalista -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid px-4">
+        <a class="navbar-brand" href="{% url 'root_home' %}"
+          ><span data-letter="N">N</span><span data-letter="e">e</span
+          ><span data-letter="x">x</span><span data-letter="o">o</span></a
+        >
+        {% if user.is_authenticated %}
+        <div class="navbar-nav ms-auto">
+          <div class="main-nav-links">
+            <a class="nav-link" href="{% url 'home' %}">Início</a>
+            <a class="nav-link" href="{% url 'organograma' %}">Organograma</a>
+            <a class="nav-link" href="#">Financeiro</a>
+            <a class="nav-link" href="{% url 'simulacao' %}">Simulação</a>
+            <button
+              id="toggleThemeBtn"
+              class="btn btn-sm ms-3"
+              title="Alternar modo escuro"
+            >
+              <i class="fas fa-moon"></i>
+            </button>
+          </div>
+          <div class="logout-container">
+            <form action="{% url 'logout' %}" method="POST" class="d-inline">
+              {% csrf_token %}
+              <button type="submit" class="nav-link logout-link">Sair</button>
+            </form>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+    </nav>
+
+    <!-- Conteúdo principal -->
+    {% if 'login' in request.path or 'register' in request.path %}
+    <div class="auth-wrapper">{% block auth_content %}{% endblock %}</div>
+    {% else %}
+    <div class="container mt-4 main-content">
+      {% if messages %} {% for message in messages %}
+      <div class="alert alert-{{ message.tags }} alert-dismissible fade show">
+        {{ message }}
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Fechar"
+        ></button>
+      </div>
+      {% endfor %} {% endif %} {% block content %}{% endblock %}
+    </div>
+    {% endif %}
+
+    <!-- Rodapé -->
+    <footer class="footer mt-5 py-3">
+      <div class="container text-center">
+        <p>&copy; 2025 Nexos - Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Scripts personalizados -->
+    <script>
+      // Theme toggling functionality
+      document.addEventListener('DOMContentLoaded', () => {
+        const toggleThemeBtn = document.getElementById('toggleThemeBtn')
+        if (toggleThemeBtn) {
+          // Check if there's a saved theme preference
+          const isDarkMode = localStorage.getItem('darkMode') === 'true'
+
+          // Apply the saved preference
+          if (isDarkMode) {
+            document.body.classList.add('dark-mode')
+            toggleThemeBtn.innerHTML = '<i class="fas fa-sun"></i>'
+            toggleThemeBtn.classList.add('btn-outline-light')
+          } else {
+            toggleThemeBtn.classList.add('btn-outline-dark')
+          }
+
+          // Add click event listener to toggle the theme
+          toggleThemeBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode')
+            const isDarkModeNow = document.body.classList.contains('dark-mode')
+
+            // Save preference to localStorage
+            localStorage.setItem('darkMode', isDarkModeNow)
+
+            // Update button icon
+            if (isDarkModeNow) {
+              toggleThemeBtn.innerHTML = '<i class="fas fa-sun"></i>'
+              toggleThemeBtn.classList.remove('btn-outline-dark')
+              toggleThemeBtn.classList.add('btn-outline-light')
+            } else {
+              toggleThemeBtn.innerHTML = '<i class="fas fa-moon"></i>'
+              toggleThemeBtn.classList.remove('btn-outline-light')
+              toggleThemeBtn.classList.add('btn-outline-dark')
+            }
+
+            // Disparar um evento para outros scripts
+            document.dispatchEvent(
+              new CustomEvent('themeChange', {
+                detail: { isDarkMode: isDarkModeNow }
+              })
+            )
+          })
+        }
+      })
+    </script>
+    {% block extra_js %}{% endblock %}
+  </body>
+</html>

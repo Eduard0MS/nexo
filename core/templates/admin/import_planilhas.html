@@ -1,0 +1,25 @@
+{% extends "admin/base_site.html" %}
+{% load static i18n %}
+
+{% block title %}Importar Planilhas{% endblock %}
+
+{% block content %}
+<div class="app-core model-unidadecargo change-list">
+    <h1>Importar Planilhas de Hierarquia e Estrutura Viva</h1>
+    
+    <!-- Carregando CSS customizado -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    {% if messages %}
+      {% for msg in messages %}
+        <div class="messages {{ msg.tags }}">{{ msg }}</div>
+      {% endfor %}
+    {% endif %}
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="default">Importar</button>
+    </form>
+</div>
+{% endblock %}

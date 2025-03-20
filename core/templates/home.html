@@ -1,0 +1,395 @@
+{% extends "base.html" %} {% load static %} {% block title %} Início -
+Nexo{%endblock %} {% block extra_css %}
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+  rel="stylesheet"
+/>
+<style>
+  .card {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .card-body {
+    padding: 1.5rem;
+  }
+
+  .info-icon {
+    margin-right: 10px;
+    color: #4a90e2;
+  }
+
+  .feature-icon {
+    font-size: 2rem;
+    color: #4a90e2;
+    margin-bottom: 15px;
+  }
+
+  .feature-card {
+    text-align: center;
+    padding: 20px;
+  }
+
+  .quick-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    background-color: #f8fafd;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  .quick-link:hover {
+    background-color: #e9f0f9;
+    transform: translateX(5px);
+  }
+
+  .quick-link i {
+    margin-right: 12px;
+    color: #4a90e2;
+  }
+
+  .stats-card {
+    background-color: #f8fafd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .stats-number {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #4a90e2;
+    margin-bottom: 5px;
+    transition: color 0.3s ease;
+  }
+
+  .stats-label {
+    color: #666;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+  }
+
+  /* Estilos para o modo escuro */
+  body.dark-mode .card {
+    background-color: #121212;
+    border-color: #222222;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  body.dark-mode .card:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  }
+
+  body.dark-mode .card-header {
+    background-color: #1a1a1a;
+    border-bottom: 1px solid #222222;
+  }
+
+  body.dark-mode .card-body {
+    background-color: #121212;
+  }
+
+  body.dark-mode .info-icon {
+    color: #90b2e5;
+  }
+
+  body.dark-mode .feature-icon {
+    color: #90b2e5;
+  }
+
+  body.dark-mode .quick-link {
+    background-color: #1a1a1a;
+    border: 1px solid #222222;
+  }
+
+  body.dark-mode .quick-link:hover {
+    background-color: #222222;
+    box-shadow: 0 0 15px rgba(74, 144, 226, 0.2);
+  }
+
+  body.dark-mode .quick-link i {
+    color: #90b2e5;
+  }
+
+  body.dark-mode .stats-card {
+    background-color: #1a1a1a;
+    border: 1px solid #222222;
+  }
+
+  body.dark-mode .stats-number {
+    color: #90b2e5;
+  }
+
+  body.dark-mode .stats-label {
+    color: #aaaaaa;
+  }
+
+  /* Efeitos de botões melhorados */
+  .btn-outline-primary {
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  .btn-outline-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(74, 144, 226, 0.2);
+  }
+
+  body.dark-mode .btn-outline-primary:hover {
+    box-shadow: 0 5px 15px rgba(74, 144, 226, 0.4);
+    border-color: #90b2e5;
+  }
+
+  /* Melhorias nas transições para suavidade */
+  .feature-card,
+  .stats-card,
+  .quick-link {
+    will-change: transform;
+  }
+
+  /* Sombra mais nítida para o Nexo no modo escuro */
+  body.dark-mode .navbar-brand {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.6),
+      0 0 30px rgba(74, 144, 226, 0.4);
+  }
+
+  body.dark-mode .navbar-brand:hover {
+    text-shadow: 0 0 25px rgba(255, 255, 255, 0.8),
+      0 0 35px rgba(74, 144, 226, 0.6);
+  }
+</style>
+{% endblock %} {% block content %}
+<div class="row fade-in">
+  <div class="col-12">
+    <div class="card mb-4">
+      <div
+        class="card-header d-flex justify-content-between align-items-center"
+      >
+        <h4 class="mb-0 d-flex align-items-center">
+          <span class="info-icon"><i class="fas fa-home"></i></span>
+          Bem-vindo ao Sistema Nexo
+        </h4>
+      </div>
+      <div class="card-body">
+        <p>
+          O Sistema Nexo é uma plataforma integrada para gerenciamento
+          organizacional, permitindo visualizar a estrutura hierárquica,
+          gerenciar recursos financeiros e realizar simulações de cenários.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recursos do Sistema -->
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="mb-0 d-flex align-items-center">
+          <span class="info-icon"><i class="fas fa-cubes"></i></span>
+          Recursos do Sistema
+        </h5>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-project-diagram"></i>
+              </div>
+              <h5>Organograma</h5>
+              <p>
+                Visualize a estrutura hierárquica da organização de forma
+                interativa.
+              </p>
+              <a
+                href="{% url 'organograma' %}"
+                class="btn btn-sm btn-outline-primary"
+                >Acessar</a
+              >
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h5>Financeiro</h5>
+              <p>
+                Gerencie recursos financeiros, orçamentos e relatórios
+                contábeis.
+              </p>
+              <a href="#" class="btn btn-sm btn-outline-primary">Acessar</a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-calculator"></i>
+              </div>
+              <h5>Simulação</h5>
+              <p>
+                Realize simulações de cenários para tomada de decisões
+                estratégicas.
+              </p>
+              <a
+                href="{% url 'simulacao' %}"
+                class="btn btn-sm btn-outline-primary"
+                >Acessar</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Links Rápidos e Estatísticas -->
+  <div class="row mt-3">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="mb-0 d-flex align-items-center">
+            <span class="info-icon"><i class="fas fa-link"></i></span>
+            Links Rápidos
+          </h5>
+        </div>
+        <div class="card-body">
+          <a href="{% url 'organograma' %}" class="quick-link">
+            <i class="fas fa-sitemap"></i>
+            <span>Visualizar Organograma</span>
+          </a>
+          <a href="#" class="quick-link">
+            <i class="fas fa-file-invoice-dollar"></i>
+            <span>Relatórios Financeiros</span>
+          </a>
+          <a href="{% url 'simulacao' %}" class="quick-link">
+            <i class="fas fa-calculator"></i>
+            <span>Simulador de Organograma</span>
+          </a>
+          <a href="#" class="quick-link">
+            <i class="fas fa-cogs"></i>
+            <span>Configurações do Sistema</span>
+          </a>
+          <a href="#" class="quick-link">
+            <i class="fas fa-question-circle"></i>
+            <span>Ajuda e Suporte</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="mb-0 d-flex align-items-center">
+            <span class="info-icon"><i class="fas fa-chart-pie"></i></span>
+            Estatísticas do Sistema
+          </h5>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-6 mb-3">
+              <div class="stats-card">
+                <div class="stats-number">42</div>
+                <div class="stats-label">Funcionários</div>
+              </div>
+            </div>
+            <div class="col-6 mb-3">
+              <div class="stats-card">
+                <div class="stats-number">8</div>
+                <div class="stats-label">Departamentos</div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="stats-card">
+                <div class="stats-number">12</div>
+                <div class="stats-label">Projetos Ativos</div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="stats-card">
+                <div class="stats-number">95%</div>
+                <div class="stats-label">Desempenho</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Guia de Uso -->
+  <div class="col-12 mt-3">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="mb-0 d-flex align-items-center">
+          <span class="info-icon"><i class="fas fa-book"></i></span>
+          Guia de Uso do Sistema
+        </h5>
+      </div>
+      <div class="card-body">
+        <p>
+          Para utilizar o sistema de forma eficiente, siga estas orientações:
+        </p>
+        <ul class="list-unstyled">
+          <li class="mb-2">
+            <i class="fas fa-check-circle text-success me-2"></i>
+            <strong>Organograma:</strong> Visualize a estrutura organizacional,
+            expanda ou colapse nós para ver detalhes.
+          </li>
+          <li class="mb-2">
+            <i class="fas fa-check-circle text-success me-2"></i>
+            <strong>Financeiro:</strong> Acesse relatórios, orçamentos e
+            análises financeiras da organização.
+          </li>
+          <li class="mb-2">
+            <i class="fas fa-check-circle text-success me-2"></i>
+            <strong>Simulação:</strong> Crie cenários hipotéticos para análise
+            de impacto em decisões estratégicas.
+          </li>
+          <li class="mb-2">
+            <i class="fas fa-check-circle text-success me-2"></i>
+            <strong>Navegação:</strong> Use o menu superior para acessar as
+            diferentes seções do sistema.
+          </li>
+        </ul>
+        <div class="alert alert-info mt-3">
+          <i class="fas fa-info-circle me-2"></i>
+          Para mais informações ou suporte, entre em contato com o administrador
+          do sistema.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %} {% block extra_js %}
+<!-- Scripts personalizados para a página inicial -->
+<script>
+  // Animação para os cards
+  document.addEventListener('DOMContentLoaded', function () {
+    const cards = document.querySelectorAll('.card')
+    cards.forEach((card, index) => {
+      setTimeout(() => {
+        card.style.opacity = '1'
+      }, 100 * index)
+    })
+  })
+</script>
+{% endblock %}

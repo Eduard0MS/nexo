@@ -1,0 +1,76 @@
+[
+  {
+    "id": "1",
+    "nome": "João Silva",
+    "cargo": "Diretor Presidente",
+    "secretaria": "Presidência",
+    "children": [
+      {
+        "id": "2",
+        "nome": "Maria Oliveira",
+        "cargo": "Diretora Financeira",
+        "secretaria": "Diretoria Financeira",
+        "children": [
+          {
+            "id": "5",
+            "nome": "Carlos Santos",
+            "cargo": "Gerente de Contabilidade",
+            "secretaria": "Departamento de Contabilidade",
+            "children": []
+          },
+          {
+            "id": "6",
+            "nome": "Ana Pereira",
+            "cargo": "Gerente de Orçamento",
+            "secretaria": "Departamento de Orçamento",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "nome": "Pedro Costa",
+        "cargo": "Diretor de Operações",
+        "secretaria": "Diretoria de Operações",
+        "children": [
+          {
+            "id": "7",
+            "nome": "Fernanda Lima",
+            "cargo": "Gerente de Logística",
+            "secretaria": "Departamento de Logística",
+            "children": []
+          },
+          {
+            "id": "8",
+            "nome": "Roberto Alves",
+            "cargo": "Gerente de Produção",
+            "secretaria": "Departamento de Produção",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "4",
+        "nome": "Luciana Martins",
+        "cargo": "Diretora de RH",
+        "secretaria": "Diretoria de Recursos Humanos",
+        "children": [
+          {
+            "id": "9",
+            "nome": "Marcelo Souza",
+            "cargo": "Gerente de Recrutamento",
+            "secretaria": "Departamento de Recrutamento",
+            "children": []
+          },
+          {
+            "id": "10",
+            "nome": "Juliana Ferreira",
+            "cargo": "Gerente de Treinamento",
+            "secretaria": "Departamento de Treinamento",
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+]

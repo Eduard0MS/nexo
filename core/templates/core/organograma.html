@@ -1,0 +1,13 @@
+{% extends 'base.html' %} {% load static %} {% block title %}
+Organograma{%endblock %} {% block extra_css %}
+<!-- Já incluído no base.html -->
+{% endblock %} {% block content %}
+<div class="organograma-page">
+  <div id="organogramaContainer" class="organograma-container"></div>
+</div>
+{% endblock %} {% block extra_js %}
+<!-- Carrega D3.js -->
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<!-- Script do organograma -->
+<script src="{% static 'js/organograma.js' %}"></script>
+{% endblock %}
